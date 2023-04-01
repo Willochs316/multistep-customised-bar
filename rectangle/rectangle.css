@@ -1,0 +1,49 @@
+.wrapper {
+  display:flex;
+  width: 500px;
+  height:100px;
+}
+
+.rectangle1 {
+  background:red;
+  width:33.333%;
+}
+
+.rectangle2 {
+  background:blue;
+  width:33.333%;
+}
+
+.rectangle3 {
+  background:green;
+  width:33.333%;
+}
+
+.wrapper > div {
+  position : relative;
+}
+
+.wrapper > div:after {content: '';
+    position: absolute;
+    display: block;
+    left: 99.8%;
+    top: 0;
+    bottom: 0;
+    width: 25px;
+    z-index: 99;
+    height: 100%;
+    background: #007bff;
+    -webkit-clip-path: polygon(0 0, 0 100%, 100% 50%);
+    clip-path: polygon(0 0, 0 100%, 100% 50%);
+    }
+
+.wrapper > div.rectangle1:after {
+  background-color: red;
+}
+.wrapper > div.rectangle2:after {
+  background-color: blue;
+}
+
+.wrapper > div:last-child:after {
+display: none;
+}
